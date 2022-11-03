@@ -1,6 +1,6 @@
 FROM golang:latest
-RUN mkdir /src
-WORKDIR /src
-COPY . /src
-CMD ["go","run","main.go"]
-ADD . /src
+COPY . .
+WORKDIR src
+RUN go get -u github.com/cosmtrek/air && go build -o /go/bin/air github.com/cosmtrek/air
+
+CMD ["air", "-c", ".air.toml"]

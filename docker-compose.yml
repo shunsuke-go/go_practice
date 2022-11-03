@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: build/Dockerfile
     volumes:
-      - ./:/src
+      - ./src:/go/src
     tty: true
-    working_dir: /src
-    command: /bin/bash
+    ports: 
+    - 3000:3000
