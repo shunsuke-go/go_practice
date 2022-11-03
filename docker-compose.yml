@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    container_name: "app"
+    build: .
+    volumes:
+      - ./:/code
+    tty: true
+    working_dir: /code
+    command: /bin/bash
