@@ -1,17 +1,7 @@
 package main
 
-import (
-	"net/http"
-
-	"github.com/gin-gonic/gin"
-)
+import gin "github.com/shunsuke-go/go_practice/infrastracture/gin/router"
 
 func main() {
-	engine := gin.Default()
-	engine.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "hello world!",
-		})
-	})
-	engine.Run(":3000")
+	gin.Run()
 }
