@@ -1,12 +1,12 @@
 version: "3"
 services:
-  app:
-    container_name: "app"
+  go_practice:
+    container_name: "go_practice"
     build:
       context: .
-      dockerfile: build/Dockerfile
+      dockerfile: docker/Dockerfile
     volumes:
-      - ./src:/go/src
+      - ./:/go/src/go_practice
     tty: true
-    ports: 
-    - 3000:3000
+    ports:
+      - 3000:3000
