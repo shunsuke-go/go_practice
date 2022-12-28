@@ -4,9 +4,7 @@
 package models
 
 var TableNames = struct {
-	FlywaySchemaHistory string
-	Users               string
+	Users string
 }{
-	FlywaySchemaHistory: "flyway_schema_history",
-	Users:               "users",
+	Users: "users",
 }

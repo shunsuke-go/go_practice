@@ -1,4 +1,4 @@
-output   = "models"
+output   = "src/models"
 wipe     = true
 no-tests = true
 add-enum-types = true
@@ -11,4 +11,4 @@ add-enum-types = true
   pass   = "password"
   schema = "go_practice"
   sslmode = "disable"
-  blacklist = ["migrations", "other"]
+  blacklist = ["migrations", "other", "flyway_schema_history"]

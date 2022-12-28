@@ -7,6 +7,7 @@ services:
       dockerfile: docker/Dockerfile
     volumes:
       - ./:/go/src/go_practice
+      - go_pkg:/go/pkg
       - go_installed:/go/bin
     tty: true
     networks:
@@ -39,3 +40,4 @@ networks:
 volumes:
   go_installed:
   postgres:
+  go_pkg:

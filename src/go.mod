@@ -1,4 +1,4 @@
-module github.com/shunsuke-go/go_practice
+module go_practice
 
 go 1.19
 
