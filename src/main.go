@@ -1,7 +1,9 @@
 package main
 
-import gin "github.com/shunsuke-go/go_practice/infrastracture/gin/router"
+import (
+	"go_practice/interfaceAdapter/http/routers"
+)
 
 func main() {
-	gin.Run()
+	routers.Run()
 }

@@ -16,7 +16,8 @@
   "workspaceFolder": "/go/src/go_practice",
   "features": {
     "ghcr.io/devcontainers/features/anaconda:1": {}
-  }
+  },
+  "extensions": ["golang.go"]
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},

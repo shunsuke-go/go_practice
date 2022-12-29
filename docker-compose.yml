@@ -7,6 +7,37 @@ services:
       dockerfile: docker/Dockerfile
     volumes:
       - ./:/go/src/go_practice
+      - go_pkg:/go/pkg
+      - go_installed:/go/bin
     tty: true
+    networks:
+      go_practice:
     ports:
       - 3000:3000
+  go_practice_postgres:
+    container_name: go_practice_postgres
+    image: postgres:14.6-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    networks:
+      go_practice:
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+  flyway:
+    image: flyway/flyway:9.10.2-alpine
+    networks:
+      go_practice:
+    volumes:
+      - ./migration/flyway/sql:/flyway/sql
+      - ./migration/flyway/local_conf:/flyway/conf
+    depends_on:
+      - go_practice_postgres
+networks:
+  go_practice:
+volumes:
+  go_installed:
+  postgres:
+  go_pkg:

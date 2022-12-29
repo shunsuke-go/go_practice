@@ -1,0 +1,14 @@
+output   = "src/domain/models"
+wipe     = true
+no-tests = true
+add-enum-types = true
+
+[psql]
+  dbname = "postgres"
+  host   = "host.docker.internal"
+  port   = 5432
+  user   = "postgres"
+  pass   = "password"
+  schema = "go_practice"
+  sslmode = "disable"
+  blacklist = ["migrations", "other", "flyway_schema_history"]

@@ -1,6 +1,8 @@
-package gin
+package routers
 
 import (
+	"go_practice/infrastracture/db"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,6 +18,8 @@ func createRouter() *Router {
 
 func Run() {
 	router := createRouter()
-	router.InitialRoute()
+
+	postgresConnector := db.NewPostgresConnector()
+	router.InitialRoute(postgresConnector.Conn)
 	router.Run(":3000")
 }
