@@ -1,4 +1,4 @@
-output   = "src/models"
+output   = "src/domain/models"
 wipe     = true
 no-tests = true
 add-enum-types = true
