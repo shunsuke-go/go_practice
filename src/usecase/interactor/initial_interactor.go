@@ -2,7 +2,7 @@ package interactor
 
 import (
 	"context"
-	"go_practice/domain/models"
+	"go_practice/domain/entity"
 	"go_practice/domain/repository"
 	"go_practice/usecase/inputPort"
 )
@@ -20,6 +20,6 @@ func NewInitialInteractor(repo repository.IInitialRepository) inputPort.IInitail
 	}
 }
 
-func (ii *initialInteractor) FindOneUser (ctx context.Context) (*models.User, error) {
+func (ii *initialInteractor) FindOneUser (ctx context.Context) (*entity.User, error) {
 	return ii.repository.FindOne(ctx)
 }

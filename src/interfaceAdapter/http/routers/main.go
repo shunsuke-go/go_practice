@@ -10,14 +10,14 @@ type Router struct {
 	*gin.Engine
 }
 
-func createRouter() *Router {
+func NewRouter() *Router {
 	return &Router{
 		gin.Default(),
 	}
 }
 
 func Run() {
-	router := createRouter()
+	router := NewRouter()
 
 	postgresConnector := db.NewPostgresConnector()
 	router.InitialRoute(postgresConnector.Conn)

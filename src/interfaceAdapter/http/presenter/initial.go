@@ -1,15 +1,15 @@
 package presenter
 
 import (
-	"go_practice/domain/models"
-	outputport "go_practice/usecase/outputPort"
+	"go_practice/domain/entity"
+	"go_practice/usecase/outputPort"
 )
 
 type initialPresenter struct {
-	User *models.User
+	User *entity.User
 }
 
-func NewInitialPresenter(user *models.User) outputport.IInitailPresenter {
+func NewInitialPresenter(user *entity.User) outputport.IInitailPresenter {
 	return &initialPresenter{
 		User: user,
 	}

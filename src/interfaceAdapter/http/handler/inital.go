@@ -17,10 +17,9 @@ func Inital(c *gin.Context, db *sql.DB) {
 	initialRepository := gateway.NewInitialRepository(db)
 	initialInteractor := interactor.NewInitialInteractor(initialRepository)
 
-	user, dbErr := initialInteractor.FindOneUser(c)
-
-	if dbErr != nil {
-		fmt.Print("db error", dbErr)
+	user, err := initialInteractor.FindOneUser(c)
+	if err != nil {
+		fmt.Print("db error", err)
 	}
 
 	initialPresenter := presenter.NewInitialPresenter(user)
