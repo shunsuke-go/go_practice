@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"go_practice/infrastracture/db"
+	"database/sql"
 
 	"github.com/gin-gonic/gin"
 )
@@ -16,10 +16,9 @@ func NewRouter() *Router {
 	}
 }
 
-func Run() {
+func Run(db *sql.DB) {
 	router := NewRouter()
 
-	postgresConnector := db.NewPostgresConnector()
-	router.InitialRoute(postgresConnector.Conn)
+	router.InitialRoute(db)
 	router.Run(":3000")
 }
